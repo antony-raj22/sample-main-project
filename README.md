@@ -1,4 +1,4 @@
-#Django Sample
+#Django Sample project
 
 1. create a virtual environment
 
