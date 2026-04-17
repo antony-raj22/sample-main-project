@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'app1',
+    'api',
 ]
 
 MIDDLEWARE = [
@@ -77,12 +79,11 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'todoapp',
         'USER': 'root',
-        'PASSWORD': 'password',
+        'PASSWORD': 'antony@123', 
         'HOST': 'localhost',
-        'PORT': '8000',
+        'PORT': '3306',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
