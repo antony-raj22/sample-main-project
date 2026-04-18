@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'app1',
     'api',
 ]
@@ -79,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'todoapp',
         'USER': 'root',
-        'PASSWORD': 'antony@123', 
+        'PASSWORD': 'Reshmi', 
         'HOST': 'localhost',
         'PORT': '3306',
     }
