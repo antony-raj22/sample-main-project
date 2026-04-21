@@ -1,18 +1,26 @@
 from rest_framework import serializers
-from .models import Student, Course, Enrollment
+from .models import Person, Task
+from django.contrib.auth.models import User  # ← fix: auth not outh
 
-class StudentSerializer(serializers.ModelSerializer):
+class PersonSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Student
+        model = Person
         fields = '__all__'
 
-class CourseSerializer(serializers.ModelSerializer):
+class TaskSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Course
+        model = Task
         fields = '__all__'
 
-class EnrollmentSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):  # ← fix: no space in serializers.ModelSerializer
     class Meta:
-        model = Enrollment
-        fields = '__all__'
-         
+        model = User
+        fields = ['username', 'email', 'password']
+
+    def create(self, validated_data):  # ← fix: indented INSIDE the class
+        user = User.objects.create_user(
+            username=validated_data['username'],
+            email=validated_data.get('email', ''),
+            password=validated_data['password']
+        )
+        return user

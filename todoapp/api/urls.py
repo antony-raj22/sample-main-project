@@ -7,4 +7,6 @@ router.register(r'todos', views.TodoViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('api/', include('app1.urls')),
+    
 ]
