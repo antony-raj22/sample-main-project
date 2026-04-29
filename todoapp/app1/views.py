@@ -4,6 +4,10 @@ from django.contrib.auth.models import User
 from .models import Person, Task
 from .serializers import PersonSerializer, TaskSerializer, UserSerializer
 
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse("Hello, this is index page")
 class PersonListCreate(generics.ListCreateAPIView):
     queryset = Person.objects.all()
     serializer_class = PersonSerializer
