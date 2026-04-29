@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import include, path
 from .views import PersonListCreate, TaskListCreate, PersonRetrieveUpdateDestroy, TaskRetrieveUpdateDestroy, UserListCreate
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
@@ -10,4 +10,6 @@ urlpatterns = [
     path('tasklist/', TaskListCreate.as_view(), name='task-list'),
     path('personlist/<int:pk>', PersonRetrieveUpdateDestroy.as_view(), name='single-person'),
     path('tasklist/<int:pk>', TaskRetrieveUpdateDestroy.as_view(), name='single-task'),
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    
 ]
